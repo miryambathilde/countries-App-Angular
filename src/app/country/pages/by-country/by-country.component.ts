@@ -3,13 +3,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-by-country',
   templateUrl: './by-country.component.html',
-  styleUrls: ['./by-country.component.scss']
+  styleUrls: [ './by-country.component.scss' ]
 })
 export class ByCountryComponent implements OnInit {
 
-  constructor() { }
+  searchTerm: string = '';
 
-  ngOnInit(): void {
+  constructor () { }
+
+  ngOnInit (): void {
+  }
+
+  search () {
+    console.log(this.searchTerm);
   }
 
 }
