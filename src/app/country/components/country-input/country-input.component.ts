@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CountryService } from '../../services/country.service';
 import { Subject, debounceTime } from 'rxjs';
 
@@ -11,6 +11,8 @@ export class CountryInputComponent implements OnInit {
 
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
+
+  @Input() placeholder: string = "";
 
   debouncer: Subject<string> = new Subject();
 
