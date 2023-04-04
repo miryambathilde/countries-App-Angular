@@ -19,8 +19,9 @@ export class ByCountryComponent implements OnInit {
   ngOnInit (): void {
   }
 
-  searchByName () {
+  searchByName (term: string) {
     this.error = false;
+    this.searchTerm = term;
 
     this.countryService.searchCountryByName(this.searchTerm)
       .subscribe(countries => {
@@ -30,6 +31,10 @@ export class ByCountryComponent implements OnInit {
         this.error = true;
         this.countries = [];
       });
+  }
+
+  suggestions (searchTerm: string) {
+    this.error = false;
   }
 
 }
